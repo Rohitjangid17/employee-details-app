@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
+import { Employee } from '../../interfaces/common';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-create-employee-dialog',
@@ -12,7 +14,8 @@ export class CreateEmployeeDialogComponent {
   addEmployeeForm: FormGroup;
 
   constructor(
-    private _formBuilder: FormBuilder
+    private _formBuilder: FormBuilder,
+    private _commonService: CommonService
   ) {
     this.addEmployeeForm = this._formBuilder.group({
       employee_first_name: ["", [Validators.required]],
@@ -28,6 +31,21 @@ export class CreateEmployeeDialogComponent {
   }
 
   addEmployee() {
-    console.log(this.addEmployeeForm.value);
+    // get data to form object to send data in server
+    const employeeData: Employee = {
+      employeeFirstName: this.addEmployeeForm.get("employee_first_name")?.value,
+      employeeLastName: this.addEmployeeForm.get("employee_last_name")?.value,
+      employeeEmail: this.addEmployeeForm.get("employee_email")?.value,
+      employeeDateOfBirth: this.addEmployeeForm.get("employee_date_of_birth")?.value,
+      employeeGender: this.addEmployeeForm.get("employee_gender")?.value,
+      employeeEducation: this.addEmployeeForm.get("employee_education")?.value,
+      employeeCompany: this.addEmployeeForm.get("employee_company")?.value,
+      employeeExperience: this.addEmployeeForm.get("employee_experience")?.value,
+      employeePackage: this.addEmployeeForm.get("employee_package")?.value,
+    }
+    // add employee API call here
+    this._commonService.createEmployee(employeeData).subscribe((employeeRes: Employee) => {
+      console.log(employeeRes)
+    })
   }
 }
