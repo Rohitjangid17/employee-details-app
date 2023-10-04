@@ -10,29 +10,33 @@
     <!-- dialog header end here -->
 
     <!-- add employee form start here -->
-    <form class="px-3 py-3">
+    <form class="px-3 py-3" [formGroup]="addEmployeeForm">
         <div class="d-flex flex-wrap flex-sm-nowrap gap-3">
             <!-- employee first name field -->
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>First Name</mat-label>
-                <input placeholder="EX. Rohit" class="firstName" matInput>
+                <input type="text" name="firstName" formControlName="employee_first_name" placeholder="EX. Rohit"
+                    matInput>
             </mat-form-field>
             <!-- employee last name field -->
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Last Name</mat-label>
-                <input placeholder="EX. Jangid" class="laseName" matInput>
+                <input type="text" name="laseName" formControlName="employee_last_name" placeholder="EX. Jangid"
+                    matInput>
             </mat-form-field>
         </div>
         <div class="d-flex flex-wrap flex-sm-nowrap gap-3">
             <!-- employee email field -->
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Email</mat-label>
-                <input placeholder="EX. abc123@gmail.com" class="email" matInput>
+                <input type="text" name="email" formControlName="employee_email" placeholder="EX. abc123@gmail.com"
+                    matInput>
             </mat-form-field>
             <!-- employee date of birth field -->
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Date of Birth</mat-label>
-                <input matInput [matDatepicker]="picker">
+                <input type="text" name="date" formControlName="employee_date_of_birth" [matDatepicker]="picker"
+                    matInput />
                 <mat-hint>MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
@@ -40,7 +44,7 @@
         </div>
         <div class="d-flex flex-wrap flex-sm-nowrap gap-3">
             <!-- employee gender field -->
-            <mat-radio-group aria-label="Select an option">
+            <mat-radio-group aria-label="Select an option" formControlName="employee_gender">
                 <label class="fw-bolder">Gender</label>
                 <ng-container *ngFor="let gender of genders">
                     <mat-radio-button color="primary" [value]="gender">{{gender | titlecase}}</mat-radio-button>
@@ -52,7 +56,7 @@
             <!-- employee education field -->
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Education</mat-label>
-                <mat-select>
+                <mat-select formControlName="employee_education">
                     <ng-container *ngFor="let edu of education">
                         <mat-option [value]="edu">{{edu | titlecase}}</mat-option>
                     </ng-container>
@@ -62,7 +66,8 @@
             <!-- employee company field -->
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Company</mat-label>
-                <input placeholder="EX. Tata Consultancy Services" class="company" matInput>
+                <input type="text" name="company" formControlName="employee_company"
+                    placeholder="EX. Tata Consultancy Services" matInput>
             </mat-form-field>
         </div>
 
@@ -70,13 +75,15 @@
             <!-- employee experience field -->
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Experience</mat-label>
-                <input placeholder="Ex. 4 Years" matInput>
+                <input type="text" name="experience" formControlName="employee_experience" placeholder="Ex. 4 Years"
+                    matInput>
             </mat-form-field>
 
             <!-- employee package field -->
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Package</mat-label>
-                <input matInput placeholder="Ex. 12 LPA">
+                <input type="text" name="package" formControlName="employee_package" placeholder="Ex. 12 LPA"
+                    matInput />
                 <mat-hint>In Rupees(₹)</mat-hint>
             </mat-form-field>
         </div>
@@ -88,6 +95,7 @@
         <!-- close dialog button -->
         <button mat-raised-button>Cancel</button>
         <!-- save employee details button -->
-        <button color="primary" mat-raised-button>Save</button>
+        <button color="primary" (click)="addEmployee()" [disabled]="addEmployeeForm.invalid"
+            mat-raised-button>Save</button>
     </div>
 </div>
