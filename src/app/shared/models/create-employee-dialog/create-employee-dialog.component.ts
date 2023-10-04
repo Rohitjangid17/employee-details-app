@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { Employee } from '../../interfaces/common';
 import { CommonService } from '../../services/common.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create-employee-dialog',
@@ -15,6 +16,7 @@ export class CreateEmployeeDialogComponent {
 
   constructor(
     private _formBuilder: FormBuilder,
+    private _matDialog: MatDialog,
     private _commonService: CommonService
   ) {
     this.addEmployeeForm = this._formBuilder.group({
@@ -30,6 +32,7 @@ export class CreateEmployeeDialogComponent {
     })
   }
 
+  // Add Employee
   addEmployee() {
     // get data to form object to send data in server
     const employeeData: Employee = {
@@ -47,5 +50,10 @@ export class CreateEmployeeDialogComponent {
     this._commonService.createEmployee(employeeData).subscribe((employeeRes: Employee) => {
       console.log(employeeRes)
     })
+  }
+
+  // dialog close here
+  dialogClose() {
+    this._matDialog.closeAll();
   }
 }

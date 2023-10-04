@@ -8,4 +8,5 @@ export interface Employee {
     employeeCompany: string,
     employeeExperience: number,
     employeePackage: number,
+    id?: number
 }

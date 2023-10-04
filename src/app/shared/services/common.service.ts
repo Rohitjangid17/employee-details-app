@@ -15,4 +15,8 @@ export class CommonService {
   createEmployee(data: Employee): Observable<Employee> {
     return this._httpClient.post<Employee>("http://localhost:3000/employee", data);
   }
+
+  getEmployee(): Observable<Employee[]> {
+    return this._httpClient.get<Employee[]>("http://localhost:3000/employee");
+  }
 }

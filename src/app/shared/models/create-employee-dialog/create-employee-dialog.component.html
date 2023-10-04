@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-between align-items-center px-3 py-2 employee_dialog_header">
         <h3 class="m-0 text-white fs-5 fw-bolder">Add Employee</h3>
 
-        <button class="text-white" mat-icon-button>
+        <button class="text-white" (click)="dialogClose()" mat-icon-button>
             <mat-icon>close</mat-icon>
         </button>
     </div>
@@ -93,7 +93,7 @@
     <!-- dialog bottom start here -->
     <div class="employee_dialog_bottom d-flex gap-3 justify-content-end px-3 py-2">
         <!-- close dialog button -->
-        <button mat-raised-button>Cancel</button>
+        <button (click)="dialogClose()" mat-raised-button>Cancel</button>
         <!-- save employee details button -->
         <button color="primary" (click)="addEmployee()" [disabled]="addEmployeeForm.invalid"
             mat-raised-button>Save</button>
