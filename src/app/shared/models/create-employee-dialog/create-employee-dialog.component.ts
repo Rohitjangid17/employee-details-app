@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-employee-dialog.component.scss']
 })
 export class CreateEmployeeDialogComponent {
-
+  genders: string[] = ["male", "female", "other"];
+  education: string[] = ["matric", "diploma", "intermediate", "graduate", "post graduate"];
 }

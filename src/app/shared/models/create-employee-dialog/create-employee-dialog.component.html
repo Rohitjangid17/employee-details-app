@@ -1,1 +1,93 @@
-<p>create-employee-dialog works!</p>
+<div class="overflow-hidden">
+    <!-- dialog header start here -->
+    <div class="d-flex justify-content-between align-items-center px-3 py-2 employee_dialog_header">
+        <h3 class="m-0 text-white fs-5 fw-bolder">Add Employee</h3>
+
+        <button class="text-white" mat-icon-button>
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <!-- dialog header end here -->
+
+    <!-- add employee form start here -->
+    <form class="px-3 py-3">
+        <div class="d-flex gap-2">
+            <!-- employee first name field -->
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input placeholder="EX. Rohit" class="firstNameF" matInput>
+            </mat-form-field>
+            <!-- employee last name field -->
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input placeholder="EX. Jangid" class="laseNameF" matInput>
+            </mat-form-field>
+        </div>
+        <div class="d-flex gap-2">
+            <!-- employee email field -->
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input placeholder="EX. abc123@gmail.com" class="email" matInput>
+            </mat-form-field>
+            <!-- employee date of birth field -->
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Date of Birth</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="employee_data_of_birth">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="d-flex gap-2">
+            <!-- employee gender field -->
+            <mat-radio-group aria-label="Select an option">
+                <label class="fw-bolder">Gender</label>
+                <ng-container *ngFor="let gender of genders">
+                    <mat-radio-button color="primary" [value]="gender">{{gender | titlecase}}</mat-radio-button>
+                </ng-container>
+            </mat-radio-group>
+        </div>
+
+        <div class="d-flex gap-2">
+            <!-- employee education field -->
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Education</mat-label>
+                <mat-select>
+                    <ng-container *ngFor="let edu of education">
+                        <mat-option [value]="edu">{{edu | titlecase}}</mat-option>
+                    </ng-container>
+                </mat-select>
+            </mat-form-field>
+
+            <!-- employee company field -->
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Company</mat-label>
+                <input placeholder="EX. Tata Consultancy Services" class="company" matInput>
+            </mat-form-field>
+        </div>
+
+        <div class="d-flex gap-2">
+            <!-- employee experience field -->
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Experience</mat-label>
+                <input placeholder="Ex. 4 Years" matInput>
+            </mat-form-field>
+
+            <!-- employee package field -->
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Package</mat-label>
+                <input matInput placeholder="Ex. 12 LPA">
+                <mat-hint>In Rupees(₹)</mat-hint>
+            </mat-form-field>
+        </div>
+    </form>
+    <!-- add employee form end here -->
+
+    <!-- dialog bottom start here -->
+    <div class="employee_dialog_bottom d-flex gap-3 justify-content-end px-3 py-2">
+        <!-- close dialog button -->
+        <button mat-raised-button>Cancel</button>
+        <!-- save employee details button -->
+        <button color="primary" mat-raised-button>Save</button>
+    </div>
+</div>
