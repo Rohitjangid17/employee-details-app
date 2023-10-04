@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateEmployeeDialogComponent } from '../../models/create-employee-dialog/create-employee-dialog.component';
 
 @Component({
   selector: 'app-employee-toolbar',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class EmployeeToolbarComponent {
 
+  constructor(
+    private _matDialog: MatDialog
+  ) { }
+
+  addEmployee() {
+    const dialogRef = this._matDialog.open(CreateEmployeeDialogComponent);
+    console.log(dialogRef);
+  }
 }
