@@ -8,8 +8,6 @@ import { Employee } from './shared/interfaces/common';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'employee-details-app';
-
   employeeList: Employee[] = [];
 
   constructor(
