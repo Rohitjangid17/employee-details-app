@@ -1,2 +1,87 @@
 <app-employee-toolbar></app-employee-toolbar>
-<app-employee-screen></app-employee-screen>
+
+<!-- employee screen start here -->
+<div class="m-3 d-flex flex-column shadow-sm">
+    <!-- table scroll start here -->
+    <div class="employee_main">
+        <!-- header start here -->
+        <div class="p-3 inventory-grid employee_screen_header">
+            <!-- Employee Serial Number Header -->
+            <div class="employee_header_content">ID</div>
+
+            <!-- Employee First Name Header -->
+            <div class="employee_header_content">First Name</div>
+
+            <!-- Employee Last Name Header -->
+            <div class="employee_header_content">Last Name</div>
+
+            <!-- Employee Email Header -->
+            <div class="employee_header_content">Email</div>
+
+            <!-- Employee DOB Header -->
+            <div class="employee_header_content">DOB</div>
+
+            <!-- Employee Gender Header -->
+            <div class="employee_header_content">Gender</div>
+
+            <!-- Employee Education Header -->
+            <div class="employee_header_content">Education</div>
+
+            <!-- Employee Company Header -->
+            <div class="employee_header_content">Company</div>
+
+            <!-- Employee Experience Header -->
+            <div class="employee_header_content">Experience</div>
+
+            <!-- Employee Package Header -->
+            <div class="employee_header_content">Package</div>
+        </div>
+        <!-- header end here -->
+
+        <!-- row screen -->
+        <div class="employee_list_row_main">
+            <ng-container *ngFor="let employee of employeeList">
+                <div class="p-3 inventory-grid employee_screen_row border-bottom">
+                    <!-- Employee Serial Number Row -->
+                    <div>{{employee?.id}}</div>
+
+                    <!-- Employee First Name Row -->
+                    <div>{{employee?.employeeFirstName}}</div>
+
+                    <!-- Employee Last Name Row -->
+                    <div>{{employee?.employeeLastName}}</div>
+
+                    <!-- Employee Email Row -->
+                    <div>{{employee?.employeeEmail}}</div>
+
+                    <!-- Employee DOB Row -->
+                    <div>{{employee?.employeeDateOfBirth | date}}</div>
+
+                    <!-- Employee Gender Row -->
+                    <div>{{employee?.employeeGender | titlecase}}</div>
+
+                    <!-- Employee Education Row -->
+                    <div>{{employee?.employeeEducation | titlecase}}</div>
+
+                    <!-- Employee Company Row -->
+                    <div>{{employee?.employeeCompany | titlecase}}</div>
+
+                    <!-- Employee Experience Row -->
+                    <div>
+                        <ng-container *ngIf="employee?.employeeExperience == 1">
+                            {{employee?.employeeExperience}} Year
+                        </ng-container>
+                        <ng-container *ngIf="employee?.employeeExperience != 1">
+                            {{employee?.employeeExperience}} Years
+                        </ng-container>
+                    </div>
+
+                    <!-- Employee Package Row -->
+                    <div>{{employee?.employeePackage}} LPA</div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <!-- table scroll end here -->
+</div>
+<!-- employee screen end here -->

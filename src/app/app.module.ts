@@ -16,16 +16,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { EmployeeToolbarComponent } from './shared/component/employee-toolbar/employee-toolbar.component';
-import { CreateEmployeeDialogComponent } from './shared/models/create-employee-dialog/create-employee-dialog.component';
-import { EmployeeScreenComponent } from './shared/component/employee-screen/employee-screen.component';
+import { CreateEmployeeDialogComponent } from './shared/components/create-employee-dialog/create-employee-dialog.component';
+import { EmployeeToolbarComponent } from './shared/components/employee-toolbar/employee-toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeToolbarComponent,
     CreateEmployeeDialogComponent,
-    EmployeeScreenComponent
+    EmployeeToolbarComponent,
   ],
   imports: [
     BrowserModule,

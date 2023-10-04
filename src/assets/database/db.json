@@ -1,0 +1,40 @@
+{
+  "employee": [
+    {
+      "employeeFirstName": "k,m nkn",
+      "employeeLastName": "jknkln",
+      "employeeEmail": "knkjn",
+      "employeeDateOfBirth": "2023-10-10T18:30:00.000Z",
+      "employeeGender": "male",
+      "employeeEducation": "intermediate",
+      "employeeCompany": "tata",
+      "employeeExperience": "1",
+      "employeePackage": "3",
+      "id": 1
+    },
+    {
+      "employeeFirstName": "Rohit",
+      "employeeLastName": "Jangid",
+      "employeeEmail": "jangidrohit817@gmail.com",
+      "employeeDateOfBirth": "2004-04-22T18:30:00.000Z",
+      "employeeGender": "male",
+      "employeeEducation": "intermediate",
+      "employeeCompany": "Byto",
+      "employeeExperience": "4",
+      "employeePackage": "23",
+      "id": 2
+    },
+    {
+      "employeeFirstName": " nm ",
+      "employeeLastName": "jmnjkn",
+      "employeeEmail": "jknjknjknk",
+      "employeeDateOfBirth": "2023-10-02T18:30:00.000Z",
+      "employeeGender": "male",
+      "employeeEducation": "intermediate",
+      "employeeCompany": "23e2rfegtrgf",
+      "employeeExperience": "2",
+      "employeePackage": "4",
+      "id": 3
+    }
+  ]
+}

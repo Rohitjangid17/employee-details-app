@@ -1,0 +1,51 @@
+.employee_main {
+    overflow-x: overlay;
+    display: grid;
+}
+
+.inventory-grid {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 33px 100px 100px 181px 110px 59px 101px 194px 82px 96px;
+}
+
+.employee_screen_header {
+    background-color: #3f51b5;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.employee_header_content {
+    color: white;
+    font-weight: 500;
+}
+
+.employee_list_row_main {
+    height: 75vh;
+    overflow-y: overlay;
+}
+
+// #################>>>>>>>>>> Media Query <<<<<<<<<<<<#################
+@media (min-width:576px) {
+    .inventory-grid {
+        grid-template-columns: 33px 100px 100px 181px 110px 59px 101px 194px 82px 96px;
+    }
+}
+
+@media (min-width:768px) {
+    .inventory-grid {
+        grid-template-columns: 33px 100px 100px 181px 110px 59px 101px 194px 82px 96px;
+    }
+}
+
+@media (min-width:992px) {
+    .inventory-grid {
+        grid-template-columns: 33px 100px 100px 181px 110px 59px 101px 194px 82px 96px;
+    }
+}
+
+@media (min-width:1200px) {
+    .inventory-grid {
+        grid-template-columns: 38px 100px 100px auto 108px 79px 103px 179px 85px 82px;
+    }
+}
