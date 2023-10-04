@@ -11,19 +11,19 @@
 
     <!-- add employee form start here -->
     <form class="px-3 py-3">
-        <div class="d-flex gap-2">
+        <div class="d-flex flex-wrap flex-sm-nowrap gap-3">
             <!-- employee first name field -->
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>First Name</mat-label>
-                <input placeholder="EX. Rohit" class="firstNameF" matInput>
+                <input placeholder="EX. Rohit" class="firstName" matInput>
             </mat-form-field>
             <!-- employee last name field -->
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Last Name</mat-label>
-                <input placeholder="EX. Jangid" class="laseNameF" matInput>
+                <input placeholder="EX. Jangid" class="laseName" matInput>
             </mat-form-field>
         </div>
-        <div class="d-flex gap-2">
+        <div class="d-flex flex-wrap flex-sm-nowrap gap-3">
             <!-- employee email field -->
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Email</mat-label>
@@ -32,13 +32,13 @@
             <!-- employee date of birth field -->
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Date of Birth</mat-label>
-                <input matInput [matDatepicker]="picker" formControlName="employee_data_of_birth">
+                <input matInput [matDatepicker]="picker">
                 <mat-hint>MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
         </div>
-        <div class="d-flex gap-2">
+        <div class="d-flex flex-wrap flex-sm-nowrap gap-3">
             <!-- employee gender field -->
             <mat-radio-group aria-label="Select an option">
                 <label class="fw-bolder">Gender</label>
@@ -48,7 +48,7 @@
             </mat-radio-group>
         </div>
 
-        <div class="d-flex gap-2">
+        <div class="d-flex flex-wrap flex-sm-nowrap gap-3">
             <!-- employee education field -->
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Education</mat-label>
@@ -66,7 +66,7 @@
             </mat-form-field>
         </div>
 
-        <div class="d-flex gap-2">
+        <div class="d-flex flex-wrap flex-sm-nowrap gap-3">
             <!-- employee experience field -->
             <mat-form-field class="w-100" appearance="outline">
                 <mat-label>Experience</mat-label>
